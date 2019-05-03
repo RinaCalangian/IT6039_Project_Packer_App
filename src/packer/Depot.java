@@ -19,16 +19,18 @@ public class Depot {
     }
     
     public String getName() {
-        return address.toString();
+        //return address.toString(); => should be name.toString()
+        return name.toString();
     }
     
     public Coordinates getCoordinates() {
         return this.address.getCoordinates();
     }
-    
+
+// added Override annotation 
+    @Override    
     public String toString() {
         return this.getName();
     }
-    
 }
 
