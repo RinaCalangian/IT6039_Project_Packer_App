@@ -8,6 +8,7 @@ package packer;
 /**
  *
  * @author I.M.Bad
+ * @version 1.1
  */
 public class Box {
     
@@ -27,9 +28,7 @@ public class Box {
             contents.addProduct(product, 1);
         }
     }
-    
-    
-    
+     
     public void addProduct(Product product, int quantity) {
         if (canFit(product,quantity)); {
             contents.addProduct(product, quantity);
@@ -50,37 +49,77 @@ public class Box {
         return label.toString();
     }
     
+    // added Override annotation 
+    @Override
     public String toString() {
         return getLabel();
     }
     
     public double getWeight() {
-        return contents.getWeight();
+        // commented-out line below as getWeight() is not a method in Manifest class
+        //return contents.getWeight();
+        return contents.getTotalWeight();
     }
     
+    // commented out as this method is already defined in this class
+    /*
     public void addProduct(Product product) {
         if (canFit(product)) {
             contents.addProduct(product, 1);
         }
-    }
+    }*/
     
+    /**
+     * 
+     * @param p: an instantiation of the class Product
+     * @return: returns product weight multiplied by 1(default quantity)
+     *          => is the result lesser than maximum weight capacity?
+     */
     public boolean canFit(Product p) {
-        return p.getWeight() < 40;
+        //return p.getWeight() < 40;
+        return p.getWeight() < 20;
     }
     
+    /**
+     * 
+     * @param p: an instantiation of the class Product
+     * @param quantity: entered quantity of a product
+     * @return: returns product weight multiplied by entered quantity
+     *          => is the result lesser than maximum weight capacity?
+     */
     public boolean canFit(Product p, int quantity) {
-        return (p.getWeight() * quantity) < 40;
+        //return (p.getWeight() * quantity) < 40;
+        return (p.getWeight() * quantity) < 20;
     }
     
+    /**
+     * 
+     * @return: returns the computed value of subtracting the current total
+     *      weight stored (as processed by a method in the class Manifest)
+     *      from the set maximum weight capacity (20kg)
+     */
     public double remainingCapacity() {
-        return 40 - this.getWeight();
+        //return 40 - this.getWeight();
+        return 20 - this.getWeight();
     }
     
+    /**
+     * 
+     * @return: returns value true or false if product is hazardous
+     *      (as processed by a method in the class Manifest)
+     */
     public boolean isFragile() {
         return contents.hasFragileItems();
     }
     
+    /**
+     * 
+     * @return: returns value true or false if product is fragile
+     *      (as processed by a method in the class Manifest) 
+     */
     public boolean isHazardous() {
-        return false;
+        // return value should be the actual entered boolean value 
+        //return false;
+        return contents.hasHazardousItems();
     }
 }
