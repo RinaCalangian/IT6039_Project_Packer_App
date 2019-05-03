@@ -8,6 +8,7 @@ package packer;
 /**
  *
  * @author I.M.Bad
+ * @version 1.1
  */
 public class Depot {
     private String name;
@@ -18,11 +19,22 @@ public class Depot {
         this.address = address;
     }
     
+    /**
+     * 
+     * @return: returns to string type the parameter name entered in the 
+     * instantiation of this class 
+     */
     public String getName() {
         //return address.toString(); => should be name.toString()
         return name.toString();
     }
     
+    
+    /**
+     * 
+     * @return: returns the corresponding coordinates entered in the 
+     * instantiation of Address class
+     */
     public Coordinates getCoordinates() {
         return this.address.getCoordinates();
     }
