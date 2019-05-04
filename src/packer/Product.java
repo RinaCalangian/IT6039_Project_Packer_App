@@ -41,7 +41,9 @@ public class Product {
      * @return the hazardous
      */
     public boolean isHazardous() {
-        return false;
+        // commented-out as the return value should not be forced to 'false'
+        //return false;
+        return hazardous;
     }
 
     /**
@@ -51,10 +53,14 @@ public class Product {
         return fragile;
     }
 
+    // added Override annotation
+    @Override 
     public String toString() {
         return this.getName();
     }
     
+    // added Override annotation
+    @Override
     public boolean equals(Object o) {
         if (!(o instanceof Product)) {
             return false;
@@ -62,5 +68,5 @@ public class Product {
         Product p = (Product)o;
         return p.getName().equals(this.getName());
     }
-    
+
 }
