@@ -33,6 +33,7 @@ public class CustomerTest {
     Coordinates testCoordinates3 = new Coordinates(300, 400);
     Coordinates testCoordinates4 = new Coordinates(3000, 4000);*/
     
+    //Test data v1.1
     Coordinates testCoordinates0 = new Coordinates(0,0);
     Coordinates testCoordinates1 = new Coordinates(300,400);
     Coordinates testCoordinates2 = new Coordinates(30,40);
@@ -60,6 +61,8 @@ public class CustomerTest {
 
     /**
      * Test of getClosestAddressTo method, of class Customer.
+     * returns the best customer address (with the shortest distance) from the
+     * given depot address 
      */
     @Test
     public void testGetClosestAddressTo() {
@@ -67,13 +70,13 @@ public class CustomerTest {
         System.out.println("getClosestAddressTo");
         Customer testCustomer;
         
-        /**
-         * Has changed the test code of testing best address to show the actual 
-         * value being returned (v1.1 - roc - 04.05.2019)
-         */
         
-        // New TEST 1
-        // Initial address 
+        // Has changed the test code of testing best address to show the actual 
+        // result being returned (v1.1 - roc - 04.05.2019)
+         
+         
+        // TEST 1 v1.1- to verify address 3 is the best address with reference to depot0
+        // Initial address assignment
         testCustomer = new Customer("Test Customer", testAddress3);
         
         assertEquals(testAddress3, testCustomer.getClosestAddressTo(testDepot0));
@@ -91,8 +94,8 @@ public class CustomerTest {
         assertEquals(testAddress3,testCustomer.bestAddress);
         
         /*
-        // New TEST 2
-        // Initial address
+        // TEST 2 v1.1 - to verify address 2 is the best address with reference to depot0
+        // Initial address assignment
         testCustomer = new Customer("Test Customer", testAddress2);
         assertEquals(testAddress2, testCustomer.getClosestAddressTo(testDepot0));
         
@@ -106,10 +109,11 @@ public class CustomerTest {
         System.out.println("Address2 CompanyDistanceTo from Depot0: " 
                 + testCoordinates2.companyDistanceTo(testCoordinates0));
         System.out.println("bestAddress is: " + testCustomer.bestAddress + testCustomer);
-        assertEquals(testAddress2,testCustomer.bestAddress); */
+        assertEquals(testAddress2,testCustomer.bestAddress);
+        */
         
         /*
-        // New TEST 3
+        // TEST 3 v1.1 - to verify address 1 is the best address with reference to depot4
         // Initial address
         testCustomer = new Customer("Test Customer", testAddress1);
         assertEquals(testAddress1, testCustomer.getClosestAddressTo(testDepot4));
@@ -124,10 +128,11 @@ public class CustomerTest {
         System.out.println("Address2 CompanyDistanceTo from Depot4: " 
                 + testCoordinates2.companyDistanceTo(testCoordinates4));
         System.out.println("bestAddress is: " + testCustomer.bestAddress + testCustomer);
-        assertEquals(testAddress1,testCustomer.bestAddress); */
-        
+        assertEquals(testAddress1,testCustomer.bestAddress);
+        */
+                
         /*
-        // New TEST 4
+        // TEST 4 v1.1 - to verify address 2 is the best address with reference to depot4
         // Initial address
         testCustomer = new Customer("Test Customer", testAddress2);
         assertEquals(testAddress2, testCustomer.getClosestAddressTo(testDepot4));
@@ -142,8 +147,8 @@ public class CustomerTest {
         System.out.println("Address3 CompanyDistanceTo from Depot4: " 
                 + testCoordinates3.companyDistanceTo(testCoordinates4));
         System.out.println("bestAddress is: " + testCustomer.bestAddress + testCustomer);
-        assertEquals(testAddress2,testCustomer.bestAddress); */
-        
+        assertEquals(testAddress2,testCustomer.bestAddress);
+        */
     }
     
     // created additional test
