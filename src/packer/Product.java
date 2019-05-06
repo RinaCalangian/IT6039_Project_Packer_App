@@ -8,6 +8,7 @@ package packer;
 /**
  *
  * @author I.M.Bad
+ * @version 1.1
  */
 public class Product {
 
@@ -16,6 +17,13 @@ public class Product {
     private boolean hazardous;
     private boolean fragile;
 
+    /**
+     * Constructs and initializes a Product name, weight, and its properties 
+     * @param name name of the item (example: "Hammer")
+     * @param weight weight of the item (example: 5)
+     * @param hazardous hazardous enter true if it is, otherwise enter false 
+     * @param fragile fragile enter true if it is, otherwise enter false
+     */
     public Product(String name, int weight, boolean hazardous, boolean fragile) {
         this.name = name;
         this.weight = weight;
@@ -24,21 +32,21 @@ public class Product {
     }
 
     /**
-     * @return the weight
+     * @return return weight
      */
     public int getWeight() {
         return weight;
     }
 
     /**
-     * @return the name
+     * @return return item name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * @return the hazardous
+     * @return hazardous returns true if entered true, otherwise false
      */
     public boolean isHazardous() {
         // commented-out as the return value should not be forced to 'false'
@@ -47,7 +55,7 @@ public class Product {
     }
 
     /**
-     * @return the fragile
+     * @return fragile returns true if entered true, otherwise false
      */
     public boolean isFragile() {
         return fragile;
@@ -59,6 +67,11 @@ public class Product {
         return this.getName();
     }
     
+    /**
+     * Compares the equality of string (item names) of objects of class Product. 
+     * @param o o instance of class Product
+     * @return returns the item name
+     */
     // added Override annotation
     @Override
     public boolean equals(Object o) {

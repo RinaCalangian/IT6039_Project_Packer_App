@@ -14,6 +14,12 @@ public class Depot {
     private String name;
     private Address address;
 
+    
+    /**
+     * Constructs and initializes a Depot name and an object Address
+     * @param name name of the depot
+     * @param address address of the depot and its coordinates
+     */
     public Depot(String name, Address address) {
         this.name = name;
         this.address = address;
@@ -21,7 +27,7 @@ public class Depot {
     
     /**
      * 
-     * @return: returns to string type the parameter name entered in the 
+     * @return returns to string type the parameter name entered in the 
      * instantiation of this class 
      */
     public String getName() {
@@ -29,10 +35,9 @@ public class Depot {
         return name.toString();
     }
     
-    
     /**
      * 
-     * @return: returns the corresponding coordinates entered in the 
+     * @return returns the corresponding coordinates entered in the 
      * instantiation of Address class
      */
     public Coordinates getCoordinates() {

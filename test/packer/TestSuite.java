@@ -12,6 +12,8 @@ import packer.CoordinatesTest;
 import packer.CustomerTest;
 import packer.DepotTest;
 import packer.ProductTest;
+import packer.BoxTest;
+import packer.ManifestTest;
 
 
 /**
@@ -24,7 +26,9 @@ import packer.ProductTest;
     AddressTest.class,
     DepotTest.class,
     ProductTest.class,
-    CustomerTest.class
+    CustomerTest.class,
+    BoxTest.class,
+    ManifestTest.class
 })
 
 public class TestSuite {

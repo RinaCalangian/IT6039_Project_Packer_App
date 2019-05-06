@@ -18,6 +18,7 @@ import org.junit.BeforeClass;
 /**
  *
  * @author bunta
+ * @version 1.0
  */
 public class DepotTest {
     
